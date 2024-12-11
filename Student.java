@@ -14,10 +14,11 @@ public class Student {
 
     // 2. CONSTRUCTORS (manuals for setting up an object)
     // DEFAULT constructor (user did not provide data)
+    // "no-argument" constructor 
     // Job: initialize instance variables to default values 
     public Student() {
         firstName = "First";
-        lastName= "Last"
+        lastName= "Last";
         gradYear = 2037;
         email = firstName + "." + lastName + gradYear + "@gbwl.org";
 
@@ -25,11 +26,18 @@ public class Student {
 
     // Constructor with PARAMETERS (user provided key data)
     // Job: initialize instance variables to PROVIDED values
-    public Student(String initFName, String initLName, int initGradYear) {
-        firstName = initFName;
-        lastName = initLName;
+    // ORDER OF PARAMETERS IS IMPORTANT! (the data types)
+    // "initFirstName," etc. are like PLACEHOLDERS for real values 
+    public Student(String initFirstName, String initLastName, int initGradYear) {
+        firstName = initFirstName;
+        lastName = initLastName;
         gradYear = initGradYear;
         email = firstName + "." + lastName + gradYear + "@gbwl.org";
     }
     // 3. METHODS (behaviors associated with the object type)
+    // toString method provides a "String Representation"
+    // of an object instance with all its data 
+    public String  toString() {
+        return ("Student [" + firstName + ", " + lastName + ", " + gradYear + ", " + email + "]");
+    }
 } 
