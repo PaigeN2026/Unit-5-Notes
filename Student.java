@@ -55,4 +55,23 @@ public class Student {
     public String getEmail() {
         return email;
     }
+
+    //  MUTATOR METHODS ("Setters") accept a new value 
+    // and change the instance variable to it
+    // Setters are VOID, meaning NO RETURN (output) 
+    public void setFirstName(String newFirstName) {
+        firstName = newFirstName;
+    }
+    
+    public void setLastName(String newLastName) {
+        lastName = newLastName;
+    }
+
+    public void setGradYear(int newGradYear) {
+        gradYear = newGradYear;
+    }
+
+    public void setEmail(String newEmail) {
+        email = newEmail;
+    }
 } 
