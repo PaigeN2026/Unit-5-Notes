@@ -11,6 +11,12 @@ public class Student {
     private String lastName;
     private int gradYear;
     private String email; 
+    // STATIC variables for data that should only have ONE COPY for an entire CLASS
+    private static int currentYear = 2025;
+    private static String schoolName = "BWL";
+    private static int studentCount = 0; // COUNTER
+    // static does not mean unchanging/constant here;
+    // instead, the keyword FINAL would be used 
 
     // 2. CONSTRUCTORS (manuals for setting up an object)
     // DEFAULT constructor (user did not provide data)
@@ -21,6 +27,8 @@ public class Student {
         lastName= "Last";
         gradYear = 2037;
         email = firstName + "." + lastName + gradYear + "@gbwl.org";
+        // increment the student object counter static variable
+        studentCount++;
 
     }
 
@@ -33,6 +41,7 @@ public class Student {
         lastName = initLastName;
         gradYear = initGradYear;
         email = firstName + "." + lastName + gradYear + "@gbwl.org";
+        studentCount++;
     }
     // 3. METHODS (behaviors associated with the object type)
     // toString method provides a "String Representation"
@@ -91,5 +100,12 @@ public class Student {
                 System.out.println(i - 1 +" assignments left.");
             }
             System.out.println("Homework is complete!");
+       }
+
+       // Example: interact with a static variable
+       // Methods can also be STATIC - meaning that the behavior/action
+       // is associated with the entire CLASS rather than one object
+       public static void printObjectCount() {
+            System.out.println(studentCount);
        }
 } 
